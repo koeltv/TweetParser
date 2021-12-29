@@ -22,9 +22,9 @@ cli
 		},() => {}, options.showTokenize, options.showSymbols)
 	})
 	//Readme command
-	.command('readme', 'Display the README.txt file')
+	.command('readme', 'Display the README.md file')
 	.action(({logger}) => {
-		fs.readFile("./README.txt", 'utf8', function(error, data){
+		fs.readFile("./README.md", 'utf8', function(error, data){
 			if(error) return logger.warn(error);
 			logger.info(data);
 		});
@@ -139,7 +139,7 @@ cli
 				]
 			})
 		});
-		
+
 	})
 
 	.command('associatedHashtags', 'List hashtags associated to a reference hashtag')
@@ -152,20 +152,20 @@ cli
 		logger.info("Création du graphique...".green);
 		let vegaLiteData = [], count = 0;
 		readDirectory(args.file, 0, (analyzer) =>{
-				analyzer.parsedTweet.forEach(tweet => {
-					if (tweet.hashtags.includes(args.hashtag)){
-						tweet.hashtags.forEach(hashtag => {
-							if (hashtag !== args.hashtag){
-								let index = vegaLiteData.findIndex(element => {
-									return element.hashtag === "#" + hashtag;
-								});
-								if (index === -1) vegaLiteData.push({hashtag: "#" + hashtag, quantite: 1});
-								else vegaLiteData[index].quantite++;
-								count++;
-							}
-						});
-					}
-				});
+			analyzer.parsedTweet.forEach(tweet => {
+				if (tweet.hashtags.includes(args.hashtag)){
+					tweet.hashtags.forEach(hashtag => {
+						if (hashtag !== args.hashtag){
+							let index = vegaLiteData.findIndex(element => {
+								return element.hashtag === "#" + hashtag;
+							});
+							if (index === -1) vegaLiteData.push({hashtag: "#" + hashtag, quantite: 1});
+							else vegaLiteData[index].quantite++;
+							count++;
+						}
+					});
+				}
+			});
 		}, () => {
 			vegaLiteData.forEach(value => value.quantite = Math.round((value.quantite / count) * 10000) / 100);
 			makeGraph("listeDesHashtags", options.png, {
@@ -200,16 +200,16 @@ cli
 		let vegaLiteData = [];
 		logger.info("Création du graphique...".green);
 		readDirectory(args.file, 0, analyzer => {
-				analyzer.parsedTweet.forEach(tweet => {
-					if (tweet.coordinates[0] !== "") {
-						let index = vegaLiteData.findIndex(element => {
-							//Si distance = sqrt((x1-x2)²+(y1-y2)²) <= 1
-							return Math.sqrt(Math.pow(+tweet.coordinates[0] - element.longitude, 2) + Math.pow(+tweet.coordinates[1] - element.latitude, 2)) <= 1;
-						});
-						if (index === -1) vegaLiteData.push({longitude: +tweet.coordinates[0], latitude: +tweet.coordinates[1], size: 1});
-						else vegaLiteData[index].size++;
-					}
-				});
+			analyzer.parsedTweet.forEach(tweet => {
+				if (tweet.coordinates[0] !== "") {
+					let index = vegaLiteData.findIndex(element => {
+						//Si distance = sqrt((x1-x2)²+(y1-y2)²) <= 1
+						return Math.sqrt(Math.pow(+tweet.coordinates[0] - element.longitude, 2) + Math.pow(+tweet.coordinates[1] - element.latitude, 2)) <= 1;
+					});
+					if (index === -1) vegaLiteData.push({longitude: +tweet.coordinates[0], latitude: +tweet.coordinates[1], size: 1});
+					else vegaLiteData[index].size++;
+				}
+			});
 		}, () => {
 			let projection = "mercator";
 			if (options.albersUsa) projection = "albersUsa";
@@ -221,7 +221,7 @@ cli
 					data: {
 						url: "data/countries-110m.json",
 						format: {type: "topojson", feature: "countries"}
-						},
+					},
 					projection: {type: projection},
 					mark: {
 						type: "geoshape",
@@ -229,17 +229,17 @@ cli
 						stroke: "black",
 						strokeWidth: 0.35
 					}
-					}, {
-						data: {values: vegaLiteData},
-						projection: {type: projection},
-						mark: "circle",
-						encoding: {
-							longitude: {field: "longitude", type: "quantitative"},
-							latitude: {field: "latitude", type: "quantitative"},
-							size: {field: "size", type: "quantitative", title: "Nombre de tweets"},
-							color: {value: "red"}
-						}
+				}, {
+					data: {values: vegaLiteData},
+					projection: {type: projection},
+					mark: "circle",
+					encoding: {
+						longitude: {field: "longitude", type: "quantitative"},
+						latitude: {field: "latitude", type: "quantitative"},
+						size: {field: "size", type: "quantitative", title: "Nombre de tweets"},
+						color: {value: "red"}
 					}
+				}
 				]
 			})
 		})
@@ -369,17 +369,17 @@ cli
 			let dateMin = new Date(convertFrDateToEn(args.periodBegin));
 			let dateMax = new Date(convertFrDateToEn(args.periodEnd));
 			readDirectory(args.file, 0, analyzer => {
-					analyzer.parsedTweet.forEach(tweet => {
-						if (tweet.correspondanceTweetPeriode(dateMin, dateMax)){
-							if(tweet.correspondanceTweetHashtag(args.hashtag.toLowerCase())){
-								if(nbTweets.get(convertFrDateToEn(dateToString(tweet.getDate()))) === undefined){
-									nbTweets.set(convertFrDateToEn(dateToString(tweet.getDate())), 1);
-								} else {
-									nbTweets.set(convertFrDateToEn(dateToString(tweet.getDate())), nbTweets.get(convertFrDateToEn(dateToString(tweet.getDate()))) + 1);
-								}
+				analyzer.parsedTweet.forEach(tweet => {
+					if (tweet.correspondanceTweetPeriode(dateMin, dateMax)){
+						if(tweet.correspondanceTweetHashtag(args.hashtag.toLowerCase())){
+							if(nbTweets.get(convertFrDateToEn(dateToString(tweet.getDate()))) === undefined){
+								nbTweets.set(convertFrDateToEn(dateToString(tweet.getDate())), 1);
+							} else {
+								nbTweets.set(convertFrDateToEn(dateToString(tweet.getDate())), nbTweets.get(convertFrDateToEn(dateToString(tweet.getDate()))) + 1);
 							}
 						}
-					});
+					}
+				});
 			}, () => {
 				let vegaData = getNumberOfHashtagsInfo(nbTweets);
 				makeGraph("nombreDeHashtagsDansPeriode", options.png, {
@@ -450,14 +450,14 @@ function makeGraph(filename, mode, graph){
 	if (!mode) {
 		let view = new vega.View(runtime).renderer('svg').run();
 		view.toSVG().then(image => {
-			fs.writeFileSync("./" + filename + ".svg", image)
+			fs.writeFileSync("./output/" + filename + ".svg", image)
 			view.finalize();
 			console.log("Emplacement du graphique : ".green + ("./" + filename + ".svg").red);
 		});
 	} else {
 		let view = new vega.View(runtime).renderer('canvas').run();
 		view.toCanvas().then(image => {
-			fs.writeFileSync("./" + filename + ".png", image.toBuffer());
+			fs.writeFileSync("./output/" + filename + ".png", image.toBuffer());
 			view.finalize();
 			console.log("Emplacement du graphique : ".green + ("./" + filename + ".png").red);
 		})
@@ -492,7 +492,7 @@ function dateToString (date) {
  * @param map
  * @returns {[]}, the array which contains our objects ready for the graph
  */
- function getNumberOfHashtagsInfo (map){
+function getNumberOfHashtagsInfo (map){
 	let tab = [];
 	map.forEach((value, key) => tab.push({"date": key, "numberHashtags": value}));
 	return tab;
