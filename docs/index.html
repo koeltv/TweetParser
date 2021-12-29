@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tweet Analyzer: README - Tweet Parser - CRVM Project</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tweet Analyzer
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Programme en ligne de commande d&#39;analyse de fichiers de tweet</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">README - Tweet Parser - CRVM Project </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a></p>
+<p><b>Membres</b> : Valentin Koeltgen, Uytterhaegen Romain, Parpette Corentin, Corsin Maxime</p>
+<h3><a class="anchor" id="autotoc_md0"></a>
+Description</h3>
+<p>Offre un parser descendant implémenté en Javascript dans le but de lire et manipuler des fichiers de Tweet. Les fichiers sont au format CSV et doivent respecter la grammaire suivante.</p>
+<hr  />
+<h3><a class="anchor" id="autotoc_md2"></a>
+Contexte</h3>
+<p>Ce projet a été effectué dans le cadre d'un cours sur les fondements à l'ingénierie logicielle (<a href="https://moodle.utt.fr/course/view.php?id=1423">GL02</a>) dirigé par M.TIXIER à <a href="https://www.utt.fr">l'Université de Technologie de Troyes (UTT)</a>. <br  />
+ Vous pouvez trouver le sujet sur ce dépôt <a href="https://github.com/koeltv/TweetParser/blob/master/Projet_GL02_A20_Synevent_SujetA.pdf">ici</a>.</p>
+<hr  />
+<h3><a class="anchor" id="autotoc_md4"></a>
+Jeu de données test</h3>
+<p><a href="https://github.com/koeltv/TweetParser/tree/master/donneesSujetA">donneesSujetA</a> (les données test fournies disponibles sur Moodle)</p>
+<hr  />
+<h3><a class="anchor" id="autotoc_md6"></a>
+Grammaire suivie</h3>
+<p>La grammaire utilisée ici est la grammaire ABNF suivant la norme <a href="https://tools.ietf.org/html/rfc5234">RFC5234</a>.</p>
+<p>FichierTweet = Entete CRLF *(tweet CRLF) <br  />
+ Entete = ’coordinates,created_at,hashtags,media,urls,favourite_count,id,in_reply_to_screen_name,in_reply_to_status_id,in_reply_to_user_id,lang,place,possibly_sensitive,retweet_count,retweet_id,retweet_screen_name,source,text,tweet_url,user_created_at,user_screen_name,user_default_profile_image,user_description,user_favourites_count,user_followers_count,user_friends_count,user_listed_count,user_location,user_name,user_screen_name,user_statuses_count,user_time_zone,user_urls,user_verified’ <br  />
+ tweet = coordinates ‘,’ created_at ‘,’ hashtags ‘,’ media ‘,’ urls ‘,’ favourite_count ‘,’ id‘,’in_reply_to_screen_name‘,’in_reply_to_status_id‘,’in_reply_to_user_id‘,’lang‘,’place‘,’possibly_sensitive‘,’retweet_count‘,’retweet_id‘,’retweet_screen_name‘,’source‘,’text‘,’tweet_url‘,’user_created_at‘,’user_screen_name‘,’user_default_profile_image‘,’user_description‘,’user_favourites_count‘,’user_followers_count‘,’user_friends_count‘,’user_listed_count‘,’user_location‘,’user_name’,user_screen_name’user_statuses_count‘,’user_time_zone‘,’user_urls ‘,’ user_verified <br  />
+ coordinates = <em>1(coordinate ‘,’ coordinate) <br  />
+ coordinate = 0*1’-’ 1*DIGIT.1*DIGIT <br  />
+ created_at = timestamp <br  />
+ hashtags = *(1*VCHAR WSP) <br  />
+ media = *(‘​https://twitter.com/​’ NomUtilisateur ‘/status/’ 1*DIGIT PHOTO) <br  />
+ PHOTO = ‘photo/’ DIGIT <br  />
+ urls = ‘http’ *1’s’ ‘:// 1</em>(VCHAR) <br  />
+ favourite_count = 1*DIGIT <br  />
+ id = 1*DIGIT <br  />
+ in_reply_to_screen_name = *1NomUtilisateur <br  />
+ NomUtilisateur = 1*VCHAR <br  />
+ in_reply_to_status_id = *DIGIT <br  />
+ in_reply_to_user_id = *DIGIT <br  />
+ lang = 2[a-z] / ‘undefined’ ; <br  />
+ place = 1*ALPHA’,’ 1*ALPHA <br  />
+ possibly_sensitive = *1boolean <br  />
+ retweet_count = 1*DIGIT <br  />
+ reweet_id = *DIGIT <br  />
+ retweet_screen_name = *1NomUtilisateur <br  />
+ source = ‘&lt;a href= “ ‘ urls ‘ “ rel="nofollow”&gt;’ 1*VCHAR ‘’ <br  />
+ Text = *1(‘RT @’ NomUtilisateur’) 1*VCHAR <br  />
+ tweet_url = media <br  />
+ user_created_at = timestamp <br  />
+ user_screen_name = *1NomUtilisateur <br  />
+ user_default_profile_image = boolean <br  />
+ user_description = *VCHAR <br  />
+ user_followers_count =1*DIGIT <br  />
+ user_friends_count = 1*DIGIT <br  />
+ user_favourites_count = 1*DIGIT <br  />
+ user_listed_count = 1*DIGIT <br  />
+ user_location = *VCHAR <br  />
+ user_name =*VCHAR <br  />
+ user_statuses_count = 1*DIGIT <br  />
+ user_time_zone = *DIGIT <br  />
+ user_urls = urls <br  />
+ user_verified = boolean <br  />
+</p>
+<p>boolean = ‘VRAI’/ ‘FAUX’ <br  />
+ timestamp = day WSP month WSP day_number WSP time WSP time_zone WSP year <br  />
+ day = ‘Mon’ / ’Tue’ / ’Wed’ / ’Thu’ / ’Fri’ / ’Sat’ / ’Sun’ <br  />
+ month = ‘Jan’ / ‘Feb’ /’ Mar’ / ‘Apr’ / ‘May’ / ‘Jun’ / ‘Jul’ / ‘Aug’ / ‘Sep’ / ‘Oct’ / ‘Nov’ / ‘Dec’ <br  />
+ day_number = [1-31] <br  />
+ time = [0-2]DIGIT 2(‘:’ [0-5]DIGIT) <br  />
+ time_zone = (‘+’/’-’) 4DIGIT <br  />
+ year = 4DIGIT <br  />
+ date = 2(2DIGIT’/’) 4DIGIT <br  />
+</p>
+<hr  />
+<h2><a class="anchor" id="autotoc_md8"></a>
+Installation</h2>
+<p>run the following command in a terminal of your choice: <code>$ npm install</code></p>
+<hr  />
+<h2><a class="anchor" id="autotoc_md10"></a>
+Utilisation</h2>
+<p><code>$ node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> &lt;command&gt; {paramètres} [options]</code></p>
+<p><code>&lt;command&gt;</code> : "check" vérifie si un fichier/ensemble de fichier respecte la grammaire</p>
+<p><code>{paramètres}</code> file : fichier/dossier à analyser</p>
+<p><code>[options]</code> -s ou &ndash;showSymbols : affiche chaque étape de l'analyse -t ou &ndash;showTokenize : affiche le résultat de la tokenization</p>
+<p>Exemple : node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> check donneesSujetA -s</p>
+<p><code>&lt;command&gt;</code> : "readme" affiche ce fichier d'aide</p>
+<p>Exemple : node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> readme</p>
+<p><code>&lt;command&gt;</code> : "mostRetweeted" ou "mr" affiche le top10 des tweets les plus retweetés pour un certain hashtag</p>
+<p><code>{paramètres}</code> file : fichier/dossier à analyser hashtag : hashtag à rechercher</p>
+<p><code>[options]</code> -p ou &ndash;png : permet de sortir le graphique au format png</p>
+<p>Exemple : node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> mostRetweeted donneesSujetA eaw18 -p</p>
+<p><code>&lt;command&gt;</code> : "mostCompleteAuthors" ou "mca" Créer un graphique représentant les 10 auteurs ayant le plus d'informations sur eux</p>
+<p><code>{paramètres}</code> file : fichier/dossier à analyser</p>
+<p><code>[options]</code> -p ou &ndash;png : permet de sortir le graphique au format png</p>
+<p>Exemple : node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> mca donneesSujetA &ndash;png</p>
+<p><code>&lt;command&gt;</code> : "associatedHashtags" ou "assohashs" liste les hashtags associés à un certain hashtag</p>
+<p><code>{paramètres}</code> file : fichier/dossier à analyser hashtag : hashtag à rechercher</p>
+<p><code>[options]</code> -p ou &ndash;png : permet de sortir le graphique au format png</p>
+<p>Exemple : node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> associatedHashtags donneesSujetA eaw18</p>
+<p><code>&lt;command&gt;</code> : "tweetInWorld" ou "tiw" visualisation de la répartition des tweets dans le monde</p>
+<p><code>{paramètres}</code> file : fichier/dossier à analyser</p>
+<p><code>[options]</code> -p ou &ndash;png : permet de sortir le graphique au format png -u ou &ndash;albersUsa : change la projection de la carte vers la projection albersUsa -r ou &ndash;roundedMap : change la projection de la carte vers la projection equalEarth</p>
+<p>Exemple : node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> tiw donneesSujetA &ndash;albersUsa -p</p>
+<p><code>&lt;command&gt;</code> : "filter" filtre les tweets selon certains critères</p>
+<p><code>{paramètres}</code> file : fichier/dossier à analyser</p>
+<p><code>[options]</code> -n ou &ndash;name &lt;name&gt; : affiche chaque tweet contenant le nom d'utilisateur &lt;name&gt; -a ou &ndash;hashtags &lt;hashtags&gt; : affiche chaque tweet contenant une référence à &lt;hashtags&gt; -r ou &ndash;nbrt &lt;nbrt&gt; : affiche chaque tweet comparé à &lt;nbrt&gt; retweets -d ou &ndash;date &lt;date&gt; : affiche chaque tweet comparé avec &lt;date&gt; -s ou &ndash;superieur : affiche chaque tweet supérieur avec l'option souhaitée (voir autres options) -i ou &ndash;inferieur : affiche chaque tweet inférieur avec l'option souhaitée (voir autres options) -e ou &ndash;equal : affiche chacun des tweets égaux avec l'option souhaitée (voir autres options)</p>
+<p>Exemple : node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> filter donneesSujetA &ndash;name documentnow node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> filter tweets.csv &ndash;date 13/08/2001 &ndash;superieur (donne tous les tweets du fichier avec une date supérieur au 13/08/2001)</p>
+<p><code>&lt;command&gt;</code> : "numberOfHashtags" or "noh" Produit une visualisation du nombre d'utilisation par jour du hashtag saisi en paramètre sur une période donnée Si le nombre d'hashtags pour une journée contenue dans la période est égal à 0, ce jour n'est pas affiché dans la visualisation. (Nous nous sommes basés sur la maquette fourni en annexe du cahier des charges pour cette commande) (ex: node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> numberOfHashtags donneesSujetA eaw18 23/03/2018 31/03/2018)</p>
+<p><code>{paramètres}</code> file : fichier/dossier à analyser hashtag : hashtag à compter periodBegin : date de début periodEnd: date de fin</p>
+<p><code>[options]</code> -p or &ndash;png : permet de sortir le graphique au format png</p>
+<p>Exemple : node <a class="el" href="caporal_cli_8js.html">caporalCli.js</a> numberOfHashtags donneesSujetA eaw18 23/03/2018 31/03/2018 </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré par <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>
